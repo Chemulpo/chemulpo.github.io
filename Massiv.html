@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Массивы</title>
+    <link rel="stylesheet" type="text/css" href="TextBoxCSS.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <ul>
+            <li><a href="С%23TextBox.html">Вступление</a></li>
+            <li><a href="Struktur.html">Структура</a></li>
+            <li><a href="DataC%23.html">Типы и переменные</a></li>
+            <li><a href="ComandIF.html" >Операторы</a></li>
+            <li><a href="Massiv.html" id="active">Массивы</a></li>
+            <li><a href="Class.html">Классы в C#</a></li>
+        </ul>
+        <ul id="text">
+            <p>На странице:</p>
+            <li><a href="#vst">Массивы</a></li>
+            <li><a href="#hw">Инициализатор массива</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Учебник по C#</h1>
+        <h2 id="vst">Массивы</h2>
+        <p><b>Массив</b> — это структура данных, содержащая несколько переменных, доступ к которым осуществляется по вычисляемым индексам. Содержащиеся в массиве переменные именуются <b>элементами</b> этого массива. Все они имеют одинаковый тип, который называется <b>типом элементов</b> массива.</p>
+        <p>Сами массивы имеют ссылочный тип, и объявление переменной массива только выделяет память для ссылки на экземпляр массива. Фактические экземпляры массива создаются динамически во время выполнения с помощью оператора new. Операция new указывает <b>длину</b> нового экземпляра массива, которая остается неизменной в течение всего времени существования этого экземпляра. Элементы массива имеют индексы в диапазоне от 0 до Length - 1. Оператор new автоматически инициализирует все элементы массива значением по умолчанию. Например, для всех числовых типов устанавливается нулевое значение, а для всех ссылочных типов — значение null.</p>
+        <p>Следующий пример кода создает массив из int элементов, затем инициализирует этот массив и выводит содержимое массива.</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">using</span> System;
+<span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ArrayExample</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Main</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword" style="font-weight: 700;">int</span>[] a = <span class="hljs-keyword" style="font-weight: 700;">new</span> <span class="hljs-keyword" style="font-weight: 700;">int</span>[<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>];
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; a.Length; i++)
+        {
+            a[i] = i * i;
+        }
+        <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; a.Length; i++)
+        {
+            Console.WriteLine(<span class="hljs-string" style="color: rgb(136, 0, 0);">$"a[<span class="hljs-subst" style="color: rgb(68, 68, 68);">{i}</span>] = <span class="hljs-subst" style="color: rgb(68, 68, 68);">{a[i]}</span>"</span>);
+        }
+    }
+}</pre></p>
+        <p>Этот пример создает и использует <b>одномерный массив</b>. Кроме этого, C# поддерживает <b>многомерные массивы</b>. Число измерений массива, которое именуется <b>рангом</b> для типа массива, всегда на единицу больше числа запятых, включенных в квадратные скобки типа массива. Следующий пример кода поочередно создает одномерный, двухмерный и трехмерный массивы.</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[] a1 = <span class="hljs-keyword" style="font-weight: 700;">new</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>];
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[,] a2 = <span class="hljs-keyword" style="font-weight: 700;">new</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">5</span>];
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[,,] a3 = <span class="hljs-keyword" style="font-weight: 700;">new</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">5</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>];</pre></p>
+        <p>Массив a1 содержит 10 элементов, массив a2 — 50 элементов (10 × 5), и наконец a3 содержит 100 элементов (10 × 5 × 2). Элементы массива могут иметь любой тип, в том числе тип массива. Массив с элементами типа массива иногда называют <b>массивом массивов</b>, так как элементы такого массива не обязаны иметь одинаковую длину. Следующий пример создает массив массивов int.</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);">int[<span class="hljs-string" style="color: rgb(136, 0, 0);"></span>][<span class="hljs-symbol" style="color: rgb(188, 96, 96);"></span>] a = new int[<span class="hljs-string" style="color: rgb(136, 0, 0);">3</span>][<span class="hljs-symbol" style="color: rgb(188, 96, 96);"></span>];
+a[0] = new int[10];
+a[1] = new int[5];
+a[2] = new int[20];</pre></p>
+        <p>В первой строке создается массив с тремя элементами, каждый из которых имеет тип int[] и начальное значение null. В последующих строках эти три элемента инициализируются ссылками на отдельные экземпляры массивов различной длины.</p>
+        <p>Оператор new позволяет задать начальные значения элементов массива, используя <b id="hw">инициализатор массива</b>. Так называется список выражений, записанных между разделителями { и }. Следующий пример создает и инициализирует массив int[] с тремя элементами.</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[] a = <span class="hljs-keyword" style="font-weight: 700;">new</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">int</span>[] {<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>};</pre></p>
+        <p>Длина массива определяется по числу выражений между скобками { и }. Локальные объявления переменных и полей можно сократить, поскольку тип массива не обязательно объявлять повторно.</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-type" style="color: rgb(136, 0, 0);">int</span>[] a = {<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>};</pre></p>
+        <p>Оба приведенных выше примера дают результат, эквивалентный следующему коду:</p>
+        <p><pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);">int[] t = new int[<span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>];
+t[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>] = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>;
+t[<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>] = <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>;
+t[<span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>] = <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>;
+int[] a = t;</pre></p>
+    </div>
+    <div class="foot1">
+        <a href="ComandIF.html"><h3>Назад</h3></a>
+    </div>
+    <div class="foot">
+        <a href="Class.html"><h3>Дальше</h3></a>
+    </div>
+</div>
+</body>
+</html>

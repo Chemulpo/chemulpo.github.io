@@ -1,0 +1,95 @@
+h1{
+    text-align: center;
+}
+body{
+    background-color: #EBEBEB;
+}
+.main{
+    width: 800px;
+    margin: 0 auto;
+    background-color: white;
+}
+.header{
+    padding: 5px;
+    width: 150px;
+    float: left;
+    top: 25px;
+    position: fixed;
+}
+.header li{
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+.header h1{
+
+    margin: 5px;
+}
+.header ul{
+    margin: 0;
+    width: 550px;
+    padding: 0 10px;
+}
+.header a:link, .header a:visited, .foot a:visited, .foot a:link, .foot1 a:visited, .foot1 a:link{
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+    display: block;
+    padding: 2px 0 2px 10px;
+    line-height: 35px;
+}
+.header a:hover{
+    background-color: #1A31A2;
+    color: white;
+}
+.foot a:hover, .foot1 a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.content{
+    padding: 10px 15px;
+    margin-left: 170px;
+    text-align: justify;
+    line-height: 1.4;
+    position: relative;
+}
+h2{
+    margin: 5px 0;
+}
+.foot{
+    padding-right: 20px;
+    padding-bottom: 5px;
+    width: 300px;
+    float: right;
+    background-color: white;
+}
+.foot1{
+    text-align: left;
+    padding-bottom: 5px;
+    float: left;
+    padding-left: 180px;
+    width: 300px;
+    background-color: white;
+}
+#active{
+    background-color: #1A31A2;
+    color: white;
+}
+#text a:link, #text a:visited{
+    color: blue;
+    text-decoration: none;
+    font-weight: normal;
+    width: 100px;
+    line-height: 20px;
+    display: block;
+}
+#text a:hover{
+    color: black;
+    background-color: white;
+    text-decoration: underline;
+}
+.foot a:link, .foot a:visited{
+    text-align: right;
+    margin-right: 100px;
+    width: 100%;
+}

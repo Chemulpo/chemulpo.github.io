@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Команды ветвления</title>
+    <link rel="stylesheet" type="text/css" href="TextBoxCSS.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <ul>
+            <li><a href="С%23TextBox.html">Вступление</a></li>
+            <li><a href="Struktur.html">Структура</a></li>
+            <li><a href="DataC%23.html">Типы и переменные</a></li>
+            <li><a href="ComandIF.html" id="active">Операторы</a></li>
+            <li><a href="Massiv.html">Массивы</a></li>
+            <li><a href="Class.html">Классы в C#</a></li>
+        </ul>
+        <ul id="text">
+            <p>На странице:</p>
+            <li><a href="#vst">Выражения</a></li>
+            <li><a href="#hw">Операторы</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Учебник по C#</h1>
+        <h2 id="vst">Выражения</h2>
+        <p>Выражения создаются из операндов и операторов. Операторы в выражении указывают, какие действия нужно применить к операндам. Примеры операторов: +, -, *, / и new. Операндами могут являться литералы, поля, локальные переменные, выражения и т. п.</p>
+        <p>Если выражение содержит несколько операторов, порядок вычисления этих операторов определяется их приоритетом. Например, выражение x + y * z вычисляется как x + (y * z), поскольку оператор * имеет более высокий приоритет, чем оператор +.</p>
+        <p>Если операнд располагается между двумя операторами с одинаковым приоритетом, порядок их выполнения определяется ассоциативностью операторов.</p>
+        <ul>
+            <li>Все бинарные операторы, за исключением операторов объединения со значением NULL и операторов присваивания, являются левоассоциативными, т. е. эти операции выполняются слева направо. Например, выражение x + y + z вычисляется как (x + y) + z.</li>
+            <li>Операторы присваивания, операторы объединения со значением NULL ?? и ??=, а также условный оператор ?: являются правоассоциативными, т. е. эти операции выполняются справа налево. Например, выражение x = y = z вычисляется как x = (y = z).</li>
+        </ul>
+        <p>Приоритет и ассоциативность операторов можно изменять, используя скобки. Например, в выражении x + y * z сначала y умножается на z, а результат прибавляется к x, а в выражении (x + y) * z сначала суммируются x и y, а результат умножается на z.</p>
+        <p>Большинство операторов могут быть перегружены. Перегрузка операторов позволяет создать пользовательскую реализацию оператора для таких операций, в которых один или оба операнда имеют определяемый пользователем тип класса или структуры.</p>
+        <p>C# предоставляет несколько операторов для выполнения арифметических, логических операций, побитовых операций и сдвигов, сравнения на равенство и порядок.</p>
+        <h2 id="hw">Операторы</h2>
+        <p>Действия программы выражаются с помощью операторов. C# поддерживает несколько типов операторов, некоторые из которых определяются как внедренные операторы.</p>
+        <p>С помощью блоков можно использовать несколько операторов в таких контекстах, где ожидается только один оператор. Блок состоит из списка инструкций, заключенных между разделителями { и }.</p>
+        <p>Операторы объявления используются для объявления локальных переменных и констант.</p>
+        <p>Операторы выражений позволяют вычислять выражения. В качестве оператора можно использовать такие выражения, как вызовы методов, выделение объектов с помощью оператора new, назначения с помощью = и составных операторов присваивания, операторы ++ и -- для приращения и уменьшения, а также выражения await.</p>
+        <p>Операторы выбора используются для выбора одного оператора из нескольких возможных вариантов в зависимости от значения какого-либо выражения. Эта группа содержит операторы if и switch.</p>
+        <p>Операторы итерации используются для многократного выполнения внедренного оператора. Эта группа содержит операторы while, do, for и foreach.</p>
+        <p>Операторы перехода используются для передачи управления. Эта группа содержит операторы break, continue, goto, throw, return и yield.</p>
+        <p>Операторы try...catch позволяют пе8рехватывать исключения, создаваемые при выполнении блока кода, а оператор try...finally используется для указания кода завершения, который выполняется всегда, независимо от появления исключений.</p>
+        <p>Операторы checked и unchecked операторы позволяют управлять контекстом проверки переполнения для целочисленных арифметических операций и преобразований.</p>
+        <p>Оператор lock позволяет создать взаимоисключающую блокировку заданного объекта перед выполнением определенных операторов, а затем снять блокировку.</p>
+        <p>Оператор using используется для получения ресурса перед определенным оператором, и для удаления ресурса после его завершения.</p>
+        <p>Ниже перечислены виды операторов, которые вы можете использовать, и представлены примеры для каждого из них.</p>
+        <ul>
+            <li>Объявление локальной переменной.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">static void Declarations(string[] args)
+{
+    int a<span class="hljs-comment" style="color: rgb(136, 136, 136);">;</span>
+    int <span class="hljs-keyword" style="font-weight: 700;">b </span>= <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>, c = <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span><span class="hljs-comment" style="color: rgb(136, 136, 136);">;</span>
+    a = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span><span class="hljs-comment" style="color: rgb(136, 136, 136);">;</span>
+    Console.WriteLine(a + <span class="hljs-keyword" style="font-weight: 700;">b </span>+ c)<span class="hljs-comment" style="color: rgb(136, 136, 136);">;</span>
+                    }</span></pre>
+            </li>
+            <li>Объявление локальной константы.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ConstantDeclarations</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">const</span> <span class="hljs-keyword" style="font-weight: 700;">float</span> pi = <span class="hljs-number" style="color: rgb(136, 0, 0);">3.1415927f</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">const</span> <span class="hljs-keyword" style="font-weight: 700;">int</span> r = <span class="hljs-number" style="color: rgb(136, 0, 0);">25</span>;
+    Console.WriteLine(pi * r * r);
+}</pre>
+            </li>
+            <li>Оператор выражения.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> Expressions(<span class="hljs-keyword" style="font-weight: 700;">string</span>[] args)
+{
+    <span class="hljs-keyword" style="font-weight: 700;">int</span> i;
+    i = <span class="hljs-number" style="color: rgb(136, 0, 0);">123</span>;                <span class="hljs-comment" style="color: rgb(136, 136, 136);">// Expression statement</span>
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Console</span>.WriteLine(i);   <span class="hljs-comment" style="color: rgb(136, 136, 136);">// Expression statement</span>
+    i++;                    <span class="hljs-comment" style="color: rgb(136, 136, 136);">// Expression statement</span>
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Console</span>.WriteLine(i);   <span class="hljs-comment" style="color: rgb(136, 136, 136);">// Expression statement</span>
+}</pre>
+            </li>
+            <li>Оператор if.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-selector-tag" style="font-weight: 700;">static</span> <span class="hljs-selector-tag" style="font-weight: 700;">void</span> <span class="hljs-selector-tag" style="font-weight: 700;">IfStatement</span>(string[] args)
+{
+    <span class="hljs-selector-tag" style="font-weight: 700;">if</span> (args.Length == <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>)
+    {
+        Console<span class="hljs-selector-class" style="color: rgb(136, 0, 0);">.WriteLine</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"No arguments"</span>);
+    }
+    <span class="hljs-selector-tag" style="font-weight: 700;">else</span>
+    {
+        Console<span class="hljs-selector-class" style="color: rgb(136, 0, 0);">.WriteLine</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"One or more arguments"</span>);
+    }
+}</pre>
+            </li>
+            <li>Оператор switch.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">SwitchStatement</span><span class="hljs-params">(string[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">int</span> n = args.Length;
+    <span class="hljs-keyword" style="font-weight: 700;">switch</span> (n)
+    {
+        <span class="hljs-keyword" style="font-weight: 700;">case</span> <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>:
+            Console.WriteLine(<span class="hljs-string" style="color: rgb(136, 0, 0);">"No arguments"</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">case</span> <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>:
+            Console.WriteLine(<span class="hljs-string" style="color: rgb(136, 0, 0);">"One argument"</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">default</span>:
+            Console.WriteLine($<span class="hljs-string" style="color: rgb(136, 0, 0);">"{n} arguments"</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+    }
+}</pre>
+            </li>
+            <li>Оператор while.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">WhileStatement</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> (i &lt; args.Length)
+    {
+        Console.WriteLine(args[i]);
+        i++;
+    }
+}</pre>
+            </li>
+            <li>Оператор do.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> DoStatement(<span class="hljs-keyword" style="font-weight: 700;">string</span>[] args)
+{
+    <span class="hljs-keyword" style="font-weight: 700;">string</span> s;
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">do</span>
+    {
+        s = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Console</span>.ReadLine();
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Console</span>.WriteLine(s);
+    } <span class="hljs-built_in" style="color: rgb(57, 115, 0);">while</span> (!<span class="hljs-keyword" style="font-weight: 700;">string</span>.IsNullOrEmpty(s));
+}
+</pre>
+            </li>
+            <li>Оператор for.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ForStatement</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; args.Length; i++)
+    {
+        Console.WriteLine(args[i]);
+    }
+}</pre>
+            </li>
+            <li>Оператор foreach.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ForEachStatement</span>(<span class="hljs-params"><span class="hljs-keyword" style="font-weight: 700;">string</span>[] args</span>)
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">foreach</span> (<span class="hljs-keyword" style="font-weight: 700;">string</span> s <span class="hljs-keyword" style="font-weight: 700;">in</span> args)
+    {
+        Console.WriteLine(s);
+    }
+}</pre>
+            </li>
+            <li>Оператор break.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">BreakStatement</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> (<span class="hljs-literal" style="color: rgb(120, 169, 96);">true</span>)
+    {
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span> s = Console.ReadLine();
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>.IsNullOrEmpty(s))
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+        Console.WriteLine(s);
+    }
+}</pre>
+            </li>
+            <li>Оператор continue.
+                <pre class="hljs" style="
+                display: block;
+                overflow-x: auto;
+                padding: 0.5em;
+                background: rgb(240, 240, 240) none repeat scroll 0% 0%;
+                 color: rgb(68, 68, 68);"
+                ><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ContinueStatement</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; args.Length; i++)
+    {
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (args[i].StartsWith(<span class="hljs-string" style="color: rgb(136, 0, 0);">"/"</span>))
+            <span class="hljs-keyword" style="font-weight: 700;">continue</span>;
+        Console.WriteLine(args[i]);
+    }
+}</pre>
+            </li>
+            <li>Оператор goto.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> GoToStatement(<span class="hljs-keyword" style="font-weight: 700;">string</span>[] args)
+{
+    <span class="hljs-keyword" style="font-weight: 700;">int</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">goto</span> check;
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">loop</span>:
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Console</span>.WriteLine(args[i++]);
+    check:
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">if</span> (i &lt; args.Length)
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">goto</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">loop</span>;
+}</pre>
+            </li>
+            <li>Оператор return.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">int</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Add</span><span class="hljs-params">(<span class="hljs-keyword" style="font-weight: 700;">int</span> a, <span class="hljs-keyword" style="font-weight: 700;">int</span> b)</span>
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">return</span> a + b;
+}
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ReturnStatement</span><span class="hljs-params">(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">string</span>[] args)</span>
+</span>{
+   Console.WriteLine(Add(<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>));
+   <span class="hljs-keyword" style="font-weight: 700;">return</span>;
+}</pre>
+            </li>
+            <li>Операторы throw и операторы try.
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">double</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Divide</span>(<span class="hljs-params"><span class="hljs-keyword" style="font-weight: 700;">double</span> x, <span class="hljs-keyword" style="font-weight: 700;">double</span> y</span>)
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> (y == <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>)
+        <span class="hljs-keyword" style="font-weight: 700;">throw</span> <span class="hljs-keyword" style="font-weight: 700;">new</span> DivideByZeroException();
+    <span class="hljs-keyword" style="font-weight: 700;">return</span> x / y;
+}
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">static</span> <span class="hljs-keyword" style="font-weight: 700;">void</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">TryCatch</span>(<span class="hljs-params"><span class="hljs-keyword" style="font-weight: 700;">string</span>[] args</span>)
+</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">try</span>
+    {
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (args.Length != <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>)
+        {
+            <span class="hljs-keyword" style="font-weight: 700;">throw</span> <span class="hljs-keyword" style="font-weight: 700;">new</span> InvalidOperationException(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Two numbers required"</span>);
+        }
+        <span class="hljs-keyword" style="font-weight: 700;">double</span> x = <span class="hljs-keyword" style="font-weight: 700;">double</span>.Parse(args[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>]);
+        <span class="hljs-keyword" style="font-weight: 700;">double</span> y = <span class="hljs-keyword" style="font-weight: 700;">double</span>.Parse(args[<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>]);
+        Console.WriteLine(Divide(x, y));
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">catch</span> (InvalidOperationException e)
+    {
+        Console.WriteLine(e.Message);
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">finally</span>
+    {
+        Console.WriteLine(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Good bye!"</span>);
+    }
+}</pre>
+        </ul>
+    </div>
+    <div class="foot1">
+        <a href="DataC%23.html"><h3>Назад</h3></a>
+    </div>
+    <div class="foot">
+        <a href="Massiv.html"><h3>Дальше</h3></a>
+    </div>
+</div>
+</body>
+</html>
